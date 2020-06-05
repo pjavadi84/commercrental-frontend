@@ -20,9 +20,12 @@ function getEquipment(){
                     <li><strong>available for pickup? </strong>${equipment.attributes.pickup}</li>
                     <li><strong>available for delivery?</strong>${equipment.attributes.delivery}</li>
                     <li>Provided by: ${equipment.relationships.vendor.data.id}</li>
+                <button equipment-id= ${equipment.id}>Edit</button>
                 </ul>
-                <br>
-            </div>`
+            </div>
+            <br><br>`;
+
+            document.querySelector("#equipment-container").innerHTML += equipmentInformation;
         });
     })
 }
