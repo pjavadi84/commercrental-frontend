@@ -26,8 +26,8 @@ const app = new App()
 //                     <li><strong>available for pickup? </strong>${equipment.attributes.pickup}</li>
 //                     <li><strong>available for delivery?</strong>${equipment.attributes.delivery}</li>
 //                     <li>Provided by: ${equipment.attributes.vendor.business_name}</li>
-//                 <button equipment-id= ${equipment.id}>Edit</button>
-//                 <button equipment-id= ${equipment.id}>Rent</button>
+    //                 <button equipment-id= ${equipment.id}>Edit</button>
+    //                 <button equipment-id= ${equipment.id}>Rent</button>
 //                 </ul>
 //             </div>
 //             <br><br>`;
