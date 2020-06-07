@@ -9,8 +9,11 @@ class Equipments {
     fetchAndLoadEquipments(){
         this.adapter.getEquipments()
         .then
-        (equipments => {equipments.data.forEach(equipment => 
-            this.equipments.push(equipment))
+        (equipments => {
+            console.log(equipments)
+            equipments.data.forEach(equipment => 
+            this.equipments.push(new Equipment(equipment)))
+            console.log(this.equipments)
         })
         .then(() => {
             this.render()
@@ -18,8 +21,9 @@ class Equipments {
     }
 
     render(){
-        const equipmentContainer = document.getElementById('equipments-container')
-        equipmentContainer.innerHTML = "my equipments are: "
-        console.log("my equipmnts are: ", this.equipments)
+        const equipmentsArray = this.equipments.map(equipment => `<li>${equipment.name}</li>`)
+        console.log(equipmentsArray);
+        const equipmentsContainer = document.getElementById('equipments-container')
+       
     }
 }
