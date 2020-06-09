@@ -31,8 +31,8 @@ class Equipment {
                 <li><strong>price/hour: </strong>$ ${this.price_per_hour}</li>
                 <li><strong>price/day: </strong>$ ${this.price_per_day}</li>
                 <li><strong>price/month: </strong>$ ${this.price_per_month}</li>
-                <li><strong>available for pickup? </strong>${this.pickup}</li>
-                <li><strong>available for delivery?</strong>${this.delivery}</li>
+                <li><strong>available for pickup? </strong>${ this.pickup ? 'yes' : 'no'}</li>
+                <li><strong>available for delivery?</strong>${this.delivery ? 'yes' : 'no'}</li>
                 <li><strong>remarks:</strong>${this.additional_comments}</li>
                 <button equipment-id= ${this.id}>Edit</button>
                 <button equipment-id= ${this.id}>Rent</button>

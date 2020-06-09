@@ -12,6 +12,7 @@ class Equipments {
         this.newEquipmentName = document.getElementById("equipment-name")
         this.newEquipmentInventoryNumber = document.getElementById("form-inventory-number")
         this.newEquipmentCategory = document.getElementById("category-selection")
+        
         this.newEquipmentAvailable = document.getElementById("available")
         this.newEquipmentNotAvailable = document.getElementById("unavailable")
         this.newEquipmentImageLink = document.getElementById("equipment-image")
@@ -20,18 +21,17 @@ class Equipments {
 
     createEquipment(e){
         e.preventDefault()
-        const newEquipmentNameValue = this.newEquipmentName.value
-        const newEquipmentInventoryNumberValue = this.newEquipmentInventoryNumber.value
-        const newEquipmentCategoryValue = this.newEquipmentCategory.value
-        const newEquipmentAvailableValue = this.newEquipmentAvailable.value
-        const newEquipmentImageValue = this.newEquipmentImageLink.value
         
-        this.adapter.createEquipment(newEquipmentNameValue)
-        this.adapter.createEquipment(newEquipmentInventoryNumberValue)
-        this.adapter.createEquipment(newEquipmentCategoryValue)
-        this.adapter.createEquipment(newEquipmentAvailableValue)
-        this.adapter.createEquipment(newEquipmentImageValue)
+        const newEquipmentName = {name: this.newEquipmentName.value}
+        const newEquipmentInventoryNumber = {inventoryNum: this.newEquipmentInventoryNumber.value}
+        const newEquipmentCategoryValue = {category: this.newEquipmentCategoryValue}
         debugger
+        const newEquipmentAvailableValue = {available: this.newEquipmentAvailable.value}
+        const newEquipmentNotAvailableValue = {unavailable: this.newEquipmentNotAvailable.value}
+        const newEquipmentImageValue = {image: this.newEquipmentImageLink.value}
+        
+        this.adapter.postEquipment(newEquipmentName,newEquipmentInventoryNumber,newEquipmentCategoryValue,newEquipmentAvailableValue, newEquipmentNotAvailableValue, newEquipmentImageValue)
+        
     }
 
     fetchAndLoadEquipments(){

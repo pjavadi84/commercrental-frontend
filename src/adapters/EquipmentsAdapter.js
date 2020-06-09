@@ -8,11 +8,16 @@ class EquipmentsAdapter {
         )
     }
 
-    createEquipment(e){
+    postEquipment(newEquipmentNameValue,newEquipmentInventoryNumberValue,newEquipmentCategoryValue,newEquipmentAvailableValue,newEquipmentNotAvailableValue,newEquipmentImageValue){
+        
         const equipment = {
             // body: value
-            newEquipmentNameValue: e,
-            newEquipmentInventoryNumberValue: e
+            // newEquipmentNameValue: value,
+            name: newEquipmentNameValue,
+            item_id: newEquipmentInventoryNumberValue,
+            category: newEquipmentCategoryValue,
+            availability: newEquipmentAvailableValue ? true : newEquipmentNotAvailableValue,
+            image: newEquipmentImageValue
         }
         
         return fetch(this.baseURL, {
