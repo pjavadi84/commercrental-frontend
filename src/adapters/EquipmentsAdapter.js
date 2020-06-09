@@ -7,4 +7,20 @@ class EquipmentsAdapter {
         return fetch(this.baseURL).then(response => response.json()
         )
     }
+
+    createEquipment(e){
+        const equipment = {
+            // body: value
+            newEquipmentNameValue: e,
+            newEquipmentInventoryNumberValue: e
+        }
+        
+        return fetch(this.baseURL, {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify({equipment})
+        })
+    }
 }
