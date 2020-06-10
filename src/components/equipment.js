@@ -1,19 +1,33 @@
 class Equipment {
-    constructor(EquipmentJSON){
-        this.id = EquipmentJSON.id 
-        this.name = EquipmentJSON.attributes.name
-        this.item_id = EquipmentJSON.attributes.item_id
-        this.category = EquipmentJSON.attributes.category
-        this.availability = EquipmentJSON.attributes.availability
-        this.price_per_hour = EquipmentJSON.attributes.price_per_hour
-        this.price_per_day = EquipmentJSON.attributes.price_per_day
-        this.price_per_month = EquipmentJSON.attributes.price_per_month
-        this.pickup = EquipmentJSON.attributes.pickup
-        this.delivery = EquipmentJSON.attributes.delivery
-        this.additional_comments = EquipmentJSON.attributes.additional_comments
-        this.customer_id = EquipmentJSON.attributes.customer_id
-        this.vendor_id = EquipmentJSON.attributes.vendor_id
-        this.image = EquipmentJSON.attributes.image
+    constructor(equipment){
+        // this.id = EquipmentJSON.id 
+        // this.name = EquipmentJSON.attributes.name
+        // this.item_id = EquipmentJSON.attributes.item_id
+        // this.category = EquipmentJSON.attributes.category
+        // this.availability = EquipmentJSON.attributes.availability
+        // this.price_per_hour = EquipmentJSON.attributes.price_per_hour
+        // this.price_per_day = EquipmentJSON.attributes.price_per_day
+        // this.price_per_month = EquipmentJSON.attributes.price_per_month
+        // this.pickup = EquipmentJSON.attributes.pickup
+        // this.delivery = EquipmentJSON.attributes.delivery
+        // this.additional_comments = EquipmentJSON.attributes.additional_comments
+        // this.customer_id = EquipmentJSON.attributes.customer_id
+        // this.vendor_id = EquipmentJSON.attributes.vendor_id
+        // this.image = EquipmentJSON.attributes.image
+        this.id = equipment.id 
+        this.name = equipment.name
+        this.item_id = equipment.item_id
+        this.category = equipment.category
+        this.availability = equipment.availability
+        this.price_per_hour = equipment.price_per_hour
+        this.price_per_day = equipment.price_per_day
+        this.price_per_month = equipment.price_per_month
+        this.pickup = equipment.pickup
+        this.delivery = equipment.delivery
+        this.additional_comments = equipment.additional_comments
+        this.customer_id = equipment.customer_id
+        this.vendor_id = equipment.vendor_id
+        this.image = equipment.image
     }
 
     renderLi() {

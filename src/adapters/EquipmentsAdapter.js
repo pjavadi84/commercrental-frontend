@@ -9,7 +9,7 @@ class EquipmentsAdapter {
     }
 
     postEquipment(newEquipmentNameValue,newEquipmentInventoryNumberValue,newEquipmentCategoryValue,newEquipmentAvailableValue,newEquipmentNotAvailableValue,newEquipmentImageValue){
-        
+        // debugger
         const equipment = {
             // body: value
             // newEquipmentNameValue: value,
@@ -25,7 +25,11 @@ class EquipmentsAdapter {
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify({equipment})
+            body: JSON.stringify(equipment)
         })
+        .then(response => response.json())
+
+        
     }
+    
 }

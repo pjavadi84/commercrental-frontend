@@ -22,15 +22,33 @@ class Equipments {
     createEquipment(e){
         e.preventDefault()
         
-        const newEquipmentName = {name: this.newEquipmentName.value}
-        const newEquipmentInventoryNumber = {inventoryNum: this.newEquipmentInventoryNumber.value}
-        const newEquipmentCategoryValue = {category: this.newEquipmentCategoryValue}
-        debugger
-        const newEquipmentAvailableValue = {available: this.newEquipmentAvailable.value}
-        const newEquipmentNotAvailableValue = {unavailable: this.newEquipmentNotAvailable.value}
-        const newEquipmentImageValue = {image: this.newEquipmentImageLink.value}
+        // const newEquipmentName = 
+        // {name: this.newEquipmentName.value,
+        // item_id: this.newEquipmentInventoryNumber.value,
+        // category: this.newEquipmentCategory.value,
+        // availability: this.newEquipmentAvailable.value,
+        // unavailable: this.newEquipmentNotAvailable.value,
+        // image: this.newEquipmentImageLink.value}
+
+        // this.adapter.postEquipment(newEquipmentName)
+        // .then(equipment => {
+        //     console.log(equipment);
+        //     debugger
+        // })
+
+        const newEquipmentName = this.newEquipmentName.value
+        const newEquipmentInventoryNumber = this.newEquipmentInventoryNumber.value
+        const newEquipmentCategoryValue = this.newEquipmentCategory.value
+        const newEquipmentAvailableValue = this.newEquipmentAvailable.value
+        const newEquipmentNotAvailableValue = this.newEquipmentNotAvailable.value
+        const newEquipmentImageValue = this.newEquipmentImageLink.value
+    
         
-        this.adapter.postEquipment(newEquipmentName,newEquipmentInventoryNumber,newEquipmentCategoryValue,newEquipmentAvailableValue, newEquipmentNotAvailableValue, newEquipmentImageValue)
+        this.adapter.postEquipment(newEquipmentName,newEquipmentInventoryNumber,newEquipmentCategoryValue,newEquipmentAvailableValue, newEquipmentNotAvailableValue,newEquipmentImageValue)
+        .then(equipment => {
+            this.equipments.push(new Equipment(equipment))
+            this.render()
+        })
         
     }
 
@@ -38,12 +56,16 @@ class Equipments {
         this.adapter.getEquipments()
         .then
         (equipments => {
-            console.log(equipments)
+            // console.log(equipments)
             equipments.data.forEach(equipment => {
-                this.equipments.push(new Equipment(equipment))
-                }
-            )
-            console.log(this.equipments)
+                debugger
+                const newEquipment = {...{id: equipment.id}, ...{type: equipment.type}, ...equipment.attributes}
+                // debugger
+            // this.equipments.push(new Equipment(equipment))
+                this.equipments.push(new Equipment(newEquipment))
+            }
+        )
+            // console.log(this.equipments)
         })
         .then(() => {
             this.render()
