@@ -1,6 +1,7 @@
 class App {
     constructor(){
         this.equipments = new Equipments()
-        // this.equipment = new Equipment()
+        this.customers = new Customers()
+        this.vendors = new Vendors()
     }
 }

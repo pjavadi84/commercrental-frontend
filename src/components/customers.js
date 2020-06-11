@@ -1,12 +1,12 @@
-class Equipments {
+class Customers {
     constructor(){
-        this.equipments = []
-        this.adapter = new EquipmentsAdapter()
-        this.initBindingsAndEventListeners()
-        this.fetchAndLoadEquipments()
+        this.customers = []
+        this.adapter = new customersAdapter()
+        this.customerInitBindingsAndEventListeners()
+        this.fetchAndLoadCustomers()
     }
 
-    initBindingsAndEventListeners(){
+    customerInitBindingsAndEventListeners(){
         this.equipmentsContainer = document.getElementById('equipments-container')
         this.equipmentsForm = document.getElementById("new_equipment_form")
 
@@ -56,7 +56,7 @@ class Equipments {
         
     }
 
-    fetchAndLoadEquipments(){
+    fetchAndLoadCustomers(){
         this.adapter.getEquipments()
         .then
         (equipments => {

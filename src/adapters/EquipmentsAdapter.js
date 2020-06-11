@@ -8,16 +8,22 @@ class EquipmentsAdapter {
         )
     }
 
-    postEquipment(newEquipmentNameValue,newEquipmentInventoryNumberValue,newEquipmentCategoryValue,newEquipmentAvailableValue,newEquipmentNotAvailableValue,newEquipmentImageValue){
+    postEquipment(newEquipmentName,newEquipmentInventoryNumberValue,newEquipmentCategoryValue,newEquipmentAvailableValue,newEquipmentNotAvailableValue,newEquipmentImageValue,newEquipmentHourlyRateValue, newEquipmentDailyRateValue, newEquipmentMonthlyRateValue,newEquipmentHoursNeededValue,newEquipmentDaysNeededValue,newEquipmentMonthsNeededValue,newEquipmentAdditionalComment){
         // debugger
         const equipment = {
-            // body: value
-            // newEquipmentNameValue: value,
-            name: newEquipmentNameValue,
+            name: newEquipmentName,
             item_id: newEquipmentInventoryNumberValue,
             category: newEquipmentCategoryValue,
             availability: newEquipmentAvailableValue ? true : newEquipmentNotAvailableValue,
-            image: newEquipmentImageValue
+            image: newEquipmentImageValue,
+            price_per_hour: newEquipmentHourlyRateValue,
+            price_per_day: newEquipmentDailyRateValue,
+            price_per_month: newEquipmentMonthlyRateValue,
+            hours_required: newEquipmentHoursNeededValue,
+            days_required: newEquipmentDaysNeededValue,
+            montths_required: newEquipmentMonthsNeededValue,
+            additional_comments: newEquipmentAdditionalComment
+
         }
         
         return fetch(this.baseURL, {
