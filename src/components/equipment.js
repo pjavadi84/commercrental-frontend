@@ -49,7 +49,7 @@ class Equipment {
                 <li><strong>available for delivery?</strong>${this.delivery ? 'yes' : 'no'}</li>
                 <li><strong>remarks:</strong>${this.additional_comments}</li>
                 <button equipment-id= ${this.id}>Edit</button>
-                <button equipment-id= ${this.id}>Rent</button>
+                <button equipment-id= ${this.id}>Delete</button>
 
             </ul>
         </div>

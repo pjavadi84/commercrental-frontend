@@ -9,10 +9,14 @@ class Equipments {
     initBindingsAndEventListeners(){
         this.equipmentsContainer = document.getElementById('equipments-container')
         this.equipmentsForm = document.getElementById("new_equipment_form")
+
         this.newEquipmentName = document.getElementById("equipment-name")
         this.newEquipmentInventoryNumber = document.getElementById("form-inventory-number")
         this.newEquipmentCategory = document.getElementById("category-selection")
-        
+        this.newEquipmentHourlyRate = document.getElementById("hourly-rate")
+        this.newEquipmentDailyRate = document.getElementById("daily-rate")
+        this.newEquipmentMonthlyRate = document.getElementById("monthly-rate")
+        this.newEquipmentAdditionalComment = document.getElementById("additional_comments")
         this.newEquipmentAvailable = document.getElementById("available")
         this.newEquipmentNotAvailable = document.getElementById("unavailable")
         this.newEquipmentImageLink = document.getElementById("equipment-image")
@@ -39,12 +43,16 @@ class Equipments {
         const newEquipmentName = this.newEquipmentName.value
         const newEquipmentInventoryNumber = this.newEquipmentInventoryNumber.value
         const newEquipmentCategoryValue = this.newEquipmentCategory.value
+        const newEquipmentHourlyRateValue = this.newEquipmentHourlyRate.value
+        const newEquipmentDailyRateValue = this.newEquipmentDailyRate.value
+        const newEquipmentMonthlyRateValue = this.newEquipmentMonthlyRate.value
+        const newEquipmentAdditionalComment = this.newEquipmentAdditionalComment.value
         const newEquipmentAvailableValue = this.newEquipmentAvailable.value
         const newEquipmentNotAvailableValue = this.newEquipmentNotAvailable.value
         const newEquipmentImageValue = this.newEquipmentImageLink.value
     
         
-        this.adapter.postEquipment(newEquipmentName,newEquipmentInventoryNumber,newEquipmentCategoryValue,newEquipmentAvailableValue, newEquipmentNotAvailableValue,newEquipmentImageValue)
+        this.adapter.postEquipment(newEquipmentMonthlyRateValue, newEquipmentAdditionalComment,newEquipmentName, newEquipmentHourlyRateValue, newEquipmentDailyRateValue, newEquipmentInventoryNumber,newEquipmentCategoryValue,newEquipmentAvailableValue, newEquipmentNotAvailableValue,newEquipmentImageValue)
         .then(equipment => {
             this.equipments.push(new Equipment(equipment))
             this.render()
@@ -58,9 +66,8 @@ class Equipments {
         (equipments => {
             // console.log(equipments)
             equipments.data.forEach(equipment => {
-                debugger
                 const newEquipment = {...{id: equipment.id}, ...{type: equipment.type}, ...equipment.attributes}
-                // debugger
+                debugger
             // this.equipments.push(new Equipment(equipment))
                 this.equipments.push(new Equipment(newEquipment))
             }

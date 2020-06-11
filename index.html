@@ -39,6 +39,7 @@
                 <div class="center-block" style="width:400px;">
                 <form id="new_equipment_form">
                     <fieldset>
+                    <h3>Equipment Info:</h3>
                     <label>equipment name:</label>
                     <input class="form-control" type="text" id="equipment-name" placeholder="enter your name"> 
                     <label>inventory number:</label>
@@ -69,6 +70,37 @@
                       </label>
                     </div>
                     <br>
+                    <!-- prices -->
+                    <h3>Set pricing:</h3>
+                    <div class="price">
+                      <label for="price-per-hour">Hourly rate:</label>
+                      <input class="price-per-hour" type="text" id="hourly-rate" placeholder="enter hourly rate">
+                      <br>
+                      <label for="price-per-day">Daily rate:</label>
+                      <input class="price-per-day" type="text" id="daily-rate" placeholder="enter daily rate">
+                      <br>
+                      <label for="price-per-month">Monthly rate:</label>
+                      <input class="price-per-month" type="text" id="monthly-rate" placeholder="enter monthly rate">
+                    </div>
+                    <br>
+                    <!-- Rental Duration -->
+                    <h3>How long needed?</h3>
+                    <div class="rental_duration">
+                      <label for="hours_required">How many hours?(based on 24 hours)</label>
+                      <input class="hours_required" type="text" id="rental_hours_needed" placeholder="enter how many hours needed">
+                      <br>
+                      <label for="days_required">How many days?</label>
+                      <input class="days_required" type="text" id="rental_days_needed" placeholder="enter how many days needed">
+                      <br>
+                      <label for="months_required">How many months?(maximum is 12 months)</label>
+                      <input class="months_required" type="text" id="rental_months_needed" placeholder="enter how many months needed">
+                    </div>
+                    <br>
+                    <!-- additional comments -->
+                    <label><strong>additional commentes:</strong></label>
+                    <br>
+                    <textarea id="additional_comments" placeholder="Enter additional comments about this equipment"></textarea>
+                    <br><br>
                     <!-- Image -->
                     <div class="equipment-form-image">
                       <label>Enter image's link:</label>
